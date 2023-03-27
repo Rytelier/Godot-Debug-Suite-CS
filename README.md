@@ -29,7 +29,7 @@ To pin a variable to diplay, right click on a variable name in the inspector and
 You can unpin and rename the variable display by right clicking on the pinned list entry.
 Save the list by going to `Debug suite` button and choosing `Save pinned`.
 
-You can also pin a value from a script, to do so, use the `PinVariableFromScript(string customId, Variant value)` function (it must be called each time to update).
+You can also pin a value from a script, to do so, use the `DebugSuite.Instance.PinVariableFromScript(string customId, Variant value)` function (it must be called each time to update).
 
 ## Hotkeys
 
