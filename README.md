@@ -9,6 +9,8 @@ Features:
 - Explore deeper classes and arrays
 - Customize layout, add bookmarks
 
+![DebugSuite1](https://user-images.githubusercontent.com/45795134/228032716-06afc14e-08ac-462c-b6c5-d4bcfd044c0b.jpg)
+
 ## Usage
 
 Place the `DebugSuite` folder in your main project's folder.
