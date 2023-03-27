@@ -1,0 +1,239 @@
+[gd_scene load_steps=14 format=3 uid="uid://c1aj2iwpc4sci"]
+
+[ext_resource type="Script" path="res://Debug Suite/DebugSuite_Window.cs" id="1_b6jnb"]
+[ext_resource type="Script" path="res://Debug Suite/DebugSuite_Inspector.cs" id="2_07p5a"]
+[ext_resource type="Texture2D" uid="uid://c7hgpqrbbjwge" path="res://Debug Suite/Resources/Move.svg" id="3_l4mrw"]
+[ext_resource type="Texture2D" uid="uid://bfs5m4ybyiaaw" path="res://Debug Suite/Resources/Scale.svg" id="4_ceq5v"]
+[ext_resource type="Texture2D" uid="uid://dgh8yiht4dt53" path="res://Debug Suite/Resources/Rect.svg" id="4_e082t"]
+[ext_resource type="Texture2D" uid="uid://bygi88vwwgia0" path="res://Debug Suite/Resources/Minimize.svg" id="5_uqs1h"]
+[ext_resource type="Texture2D" uid="uid://b63h54e1l2cs4" path="res://Debug Suite/Resources/X.svg" id="6_vb6lc"]
+[ext_resource type="Texture2D" uid="uid://b7j3de8r78gng" path="res://Debug Suite/Resources/Resize.svg" id="7_to7db"]
+[ext_resource type="Texture2D" uid="uid://bx8nu455tkwwl" path="res://Debug Suite/Resources/Arrow.svg" id="8_olohg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2oy1l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trblv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_75oxo"]
+content_margin_left = 10.0
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 0.392157)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0b43b"]
+
+[node name="Window" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 410.0
+offset_top = 68.0
+offset_right = 738.0
+offset_bottom = 575.0
+mouse_filter = 1
+script = ExtResource("1_b6jnb")
+
+[node name="Inspector panel" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("2_07p5a")
+
+[node name="Panel" type="Panel" parent="Inspector panel"]
+self_modulate = Color(1, 1, 1, 0.376471)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Inspector panel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="VBoxContainer" parent="Inspector panel/Panel/ScrollContainer"]
+layout_mode = 2
+
+[node name="Path" type="Button" parent="Inspector panel/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_2oy1l")
+text = "path"
+alignment = 0
+
+[node name="Field Template" type="HBoxContainer" parent="Inspector panel"]
+layout_mode = 2
+offset_top = 130.0
+offset_right = 1152.0
+offset_bottom = 161.0
+
+[node name="Name" type="Label" parent="Inspector panel/Field Template"]
+layout_mode = 2
+mouse_filter = 0
+text = "Variable name"
+
+[node name="Node Path Template" type="Button" parent="Inspector panel"]
+layout_mode = 0
+offset_top = 167.0
+offset_right = 253.0
+offset_bottom = 190.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_trblv")
+text = "Node path"
+alignment = 0
+
+[node name="Sublist Template" type="PanelContainer" parent="Inspector panel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 220.0
+offset_right = 174.0
+offset_bottom = 470.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_75oxo")
+
+[node name="Container" type="VBoxContainer" parent="Inspector panel/Sublist Template"]
+layout_mode = 2
+
+[node name="Info" type="Label" parent="Inspector panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.236
+anchor_top = 0.147
+anchor_right = 0.236
+anchor_bottom = 0.147
+offset_left = -266.872
+offset_top = 93.744
+offset_right = -226.872
+offset_bottom = 119.744
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 5
+text = "Info"
+vertical_alignment = 2
+
+[node name="Menu general" type="PopupMenu" parent="Inspector panel"]
+size = Vector2i(213, 62)
+item_count = 2
+item_0/text = "Bookmarks"
+item_0/id = 0
+item_1/text = "Bookmark current node"
+item_1/id = 1
+
+[node name="Menu variable" type="PopupMenu" parent="Inspector panel"]
+size = Vector2i(213, 35)
+item_count = 1
+item_0/text = "Pin variable"
+item_0/id = 0
+
+[node name="Found" type="TextureRect" parent="Inspector panel"]
+visible = false
+layout_mode = 0
+offset_left = -21.0
+offset_top = 9.0
+offset_right = -5.0
+offset_bottom = 25.0
+pivot_offset = Vector2(0, 8)
+texture = ExtResource("8_olohg")
+stretch_mode = 3
+
+[node name="Color Template" type="Button" parent="Inspector panel"]
+visible = false
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+icon = ExtResource("4_e082t")
+flat = true
+
+[node name="Color edit" type="PopupPanel" parent="Inspector panel"]
+size = Vector2i(298, 576)
+
+[node name="ColorPicker" type="ColorPicker" parent="Inspector panel/Color edit"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 294.0
+offset_bottom = 572.0
+
+[node name="Top" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -42.0
+offset_bottom = 24.0
+grow_horizontal = 2
+
+[node name="Move" type="Button" parent="Top"]
+layout_mode = 2
+icon = ExtResource("3_l4mrw")
+
+[node name="Scale" type="Button" parent="Top"]
+layout_mode = 2
+icon = ExtResource("4_ceq5v")
+
+[node name="Search" type="LineEdit" parent="."]
+layout_mode = 2
+offset_left = 56.0
+offset_right = 152.0
+offset_bottom = 23.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0b43b")
+placeholder_text = "search"
+expand_to_text_length = true
+
+[node name="Top2" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 201.0
+offset_bottom = 24.0
+grow_horizontal = 2
+alignment = 2
+
+[node name="Minimize" type="Button" parent="Top2"]
+layout_mode = 2
+icon = ExtResource("5_uqs1h")
+
+[node name="Close" type="Button" parent="Top2"]
+layout_mode = 2
+icon = ExtResource("6_vb6lc")
+
+[node name="Resize" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+icon = ExtResource("7_to7db")
+
+[node name="Delete confirm" type="PopupMenu" parent="."]
+size = Vector2i(86, 35)
+item_count = 1
+item_0/text = "Delete?"
+item_0/id = 0
+
+[node name="Freezer" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.105882)

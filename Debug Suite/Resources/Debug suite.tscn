@@ -1,0 +1,167 @@
+[gd_scene load_steps=8 format=3 uid="uid://bik4kq53m7qge"]
+
+[ext_resource type="Script" path="res://Debug Suite/DebugSuite_Manager.cs" id="1_gbltp"]
+[ext_resource type="Texture2D" uid="uid://c7hgpqrbbjwge" path="res://Debug Suite/Resources/Move.svg" id="2_fygaa"]
+[ext_resource type="Texture2D" uid="uid://b63h54e1l2cs4" path="res://Debug Suite/Resources/X.svg" id="2_vt3qh"]
+[ext_resource type="Texture2D" uid="uid://bfs5m4ybyiaaw" path="res://Debug Suite/Resources/Scale.svg" id="3_71b7j"]
+[ext_resource type="Texture2D" uid="uid://b6tjt5pnyarab" path="res://Debug Suite/Resources/Freeze.svg" id="3_nv1b7"]
+[ext_resource type="Texture2D" uid="uid://bygi88vwwgia0" path="res://Debug Suite/Resources/Minimize.svg" id="6_af8of"]
+[ext_resource type="Texture2D" uid="uid://bx8nu455tkwwl" path="res://Debug Suite/Resources/Arrow.svg" id="7_x16bm"]
+
+[node name="Debug Suite" type="CanvasLayer"]
+layer = 99
+script = ExtResource("1_gbltp")
+
+[node name="Content" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_lock_ = true
+
+[node name="Menu" type="Button" parent="Content"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = 113.0
+offset_bottom = 45.0
+text = "Debug suite"
+
+[node name="Close" type="Button" parent="Content"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -73.0
+offset_top = 9.0
+offset_right = -10.0
+offset_bottom = 45.0
+grow_horizontal = 0
+text = "[tab]"
+icon = ExtResource("2_vt3qh")
+alignment = 2
+icon_alignment = 2
+
+[node name="Freeze" type="Button" parent="Content"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -86.0
+offset_top = 51.0
+offset_right = -10.0
+offset_bottom = 87.0
+grow_horizontal = 0
+text = "[pgup]"
+icon = ExtResource("3_nv1b7")
+alignment = 2
+icon_alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Content"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 81.0
+offset_right = 89.0
+offset_bottom = 105.0
+mouse_filter = 2
+
+[node name="Pinned move" type="Button" parent="Content/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_fygaa")
+
+[node name="Pinned size" type="Button" parent="Content/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_71b7j")
+
+[node name="Pinned minimize" type="Button" parent="Content/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("6_af8of")
+
+[node name="Pinned alignment" type="Button" parent="Content/HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("7_x16bm")
+
+[node name="Pinned" type="VBoxContainer" parent="."]
+offset_left = 37.0
+offset_top = 108.0
+offset_right = 375.0
+offset_bottom = 352.0
+mouse_filter = 2
+
+[node name="Pinned template" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+mouse_filter = 1
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 16
+text = "abc"
+
+[node name="Pinned menu" type="PopupMenu" parent="."]
+size = Vector2i(92, 62)
+item_count = 2
+item_0/text = "Rename"
+item_0/id = 1
+item_1/text = "Unpin"
+item_1/id = 0
+
+[node name="Menu" type="PopupMenu" parent="."]
+size = Vector2i(136, 143)
+item_count = 5
+item_0/text = "Save layout"
+item_0/id = 0
+item_1/text = "Load layout"
+item_1/id = 3
+item_2/text = "Save pinned"
+item_2/id = 1
+item_3/text = "Load pinned"
+item_3/id = 4
+item_4/text = "Add inspector"
+item_4/id = 2
+
+[node name="Rebind" type="PopupMenu" parent="."]
+size = Vector2i(136, 35)
+item_count = 1
+item_0/text = "Rebind key"
+item_0/id = 0
+
+[node name="Pinned rename" type="PopupPanel" parent="."]
+size = Vector2i(359, 43)
+
+[node name="Rename" type="LineEdit" parent="Pinned rename"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 355.0
+offset_bottom = 39.0
+text = "Name"
+placeholder_text = "Enter new name"
+expand_to_text_length = true
+
+[node name="Rebing popup" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.278431)
+
+[node name="Label" type="Label" parent="Rebing popup"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Rebind
+Press any key"
+horizontal_alignment = 1

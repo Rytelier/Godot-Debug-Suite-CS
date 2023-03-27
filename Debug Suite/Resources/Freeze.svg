@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   height="16"
+   viewBox="0 0 16 16"
+   width="16"
+   version="1.1"
+   id="svg28"
+   sodipodi:docname="Freeze.svg"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs32" />
+  <sodipodi:namedview
+     id="namedview30"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="16"
+     inkscape:cx="17.09375"
+     inkscape:cy="5.4375"
+     inkscape:window-width="2560"
+     inkscape:window-height="1387"
+     inkscape:window-x="-8"
+     inkscape:window-y="1072"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg28" />
+  <path
+     id="rect339"
+     style="opacity:1;fill:#ffffff;stroke-width:0.383445"
+     d="M 1.8125 7.046875 L 1.8125 15.203125 L 14.1875 15.203125 L 14.1875 7.046875 L 1.8125 7.046875 z M 7.2148438 7.8125 L 8.7851562 7.8125 L 8.7851562 10.445312 L 7.2148438 10.445312 L 7.2148438 7.8125 z " />
+  <path
+     style="opacity:1;fill:none;stroke:#ffffff;stroke-width:1.52029;stroke-dasharray:none;stroke-opacity:1"
+     id="path491"
+     sodipodi:type="arc"
+     sodipodi:cx="8.00002"
+     sodipodi:cy="7.1058331"
+     sodipodi:rx="5.4429712"
+     sodipodi:ry="5.5781531"
+     sodipodi:start="3.1415927"
+     sodipodi:end="6.279563"
+     sodipodi:arc-type="arc"
+     d="M 2.5570488,7.1058331 A 5.4429712,5.5781531 0 0 1 7.9901621,1.5276891 5.4429712,5.5781531 0 0 1 13.442956,7.0856273"
+     sodipodi:open="true" />
+</svg>
